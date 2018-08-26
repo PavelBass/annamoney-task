@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Web Socket factorial</title>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <script>
+        var ws = new WebSocket('ws://localhost:8000/ws');
+        ws.onmessage = function(evnt){
+            console.log(evnt.data);
+        }
+        ws.onclose = function(){
+            console.log("CLOSE");
+        }
+        function send_message(mess){
+          var res = ws.send(mess);
+        }
+
+    </script>
+    <div id="abc">
+        Web Socket factorial<br>
+        Use console to send websocket message with send_message()
+    </div>
+  </body>
+</html>
