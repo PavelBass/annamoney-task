@@ -1,6 +1,9 @@
 import os
-from setuptools import setup, find_packages
 
+from setuptools import (
+    find_packages,
+    setup,
+)
 
 setup(
     name='annamoney_task',
@@ -13,9 +16,14 @@ setup(
             'annamoney_task=annamoney_task.cli:cli',
         ],
     },
-    long_description=open(os.path.join(os.path.dirname(__file__), 'README.md')).read(),
+    long_description=open(os.path.join(os.path.dirname(__file__), 'README_RU.md')).read(),
     packages=find_packages('src'),
     package_dir={'': 'src'},
+    install_requires=[
+        'aiohttp==3.4.0',
+        'click==6.7',
+        'ujson>=1.35',
+    ],
     extras_require={
         'test': [
             'pycodestyle',
