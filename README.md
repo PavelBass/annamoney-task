@@ -18,6 +18,9 @@ without awaiting.
 
 Require: Python 3.7 or higher.
 
+## Demo
+[![Demo](demo_video.png)](https://youtu.be/pMMf_fhCPIo)
+
 ### Protocol
 
 C - client, S - server
@@ -25,15 +28,12 @@ C - client, S - server
 ```
 General:
     C -> {event} -> S
-    C <- {event acknowledge} <- S
     C <- {event result} <- S
 
 Exmple:
     C -> "get_factorial 10" -> S
-    C <- "{'event': 'acknowledge', 'meta': {'command': 'get_factorial 10', 'id': '5fb2...'}, 'payload': {}" <- S
-    C <- "{'event': 'result', 'meta': {'command': 'get_factorial 10', 'id': '5fb2...'}, 'payload': {'result': 3628800}" <- S
+    C <- "{'event_name': 'get_factorial 10', 'result': '3628800', 'time': 0.0001189709}" <- S
 ```
-
 ### Commands
 * `get_factorial N`
 * `ping`
@@ -41,7 +41,7 @@ Exmple:
 
 ## Install and run
 I reccomend to use `virtualenv` or `pyenv virtualenv` to create virtual environment. 
-After: 
+Then: 
 
 ```
 $ pip install git@github.com:PavelBass/annamoney-task.git

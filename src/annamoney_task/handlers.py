@@ -21,4 +21,5 @@ class WebSocketHandler(LoggerMixin, web.View):
 
     async def _process_ws_message(self, ws: web.WebSocketResponse, message: str):
         answer = await self.service.process_message(message)
+        answer['event_name'] = message
         await ws.send_json(answer, dumps=ujson.dumps)
