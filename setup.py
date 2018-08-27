@@ -7,7 +7,7 @@ from setuptools import (
 
 setup(
     name='annamoney_task',
-    version='0.0.1',
+    version='1.0.0',
     author='Pavel Bass',
     author_email='statgg@gmail.com',
     description='anna.money job challenge',
