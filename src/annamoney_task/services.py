@@ -75,7 +75,7 @@ class WebSocketService(LoggerMixin):
 class FactorialService(LoggerMixin):
     def __init__(self):
         super().__init__()
-        self._cache = {0: 0, 1: 1, 2: 2}
+        self._cache = {0: 1, 1: 1, 2: 2}
 
     async def get_factorial_command(self, command: WebSocketParsedCommandEntity) -> WebSocketCommandResultEntity:
         start = time.time()
