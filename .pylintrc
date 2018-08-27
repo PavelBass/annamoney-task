@@ -15,6 +15,7 @@ disable=
   duplicate-code,
   c-extension-no-member,
   wrong-import-order,
+  ungrouped-imports,
 
 
 [REPORTS]

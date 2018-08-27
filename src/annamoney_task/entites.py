@@ -4,16 +4,23 @@ from typing import (
     Awaitable,
     Callable,
     List,
+    Union,
 )
 
 
 @dataclass
-class WebSocketParsedCommand:
+class WebSocketParsedCommandEntity:
     name: str
     arguments: List[str]
 
 
 @dataclass
-class WebSocketCommand:
+class WebSocketCommandEntity:
     method: Callable[[Any], Awaitable[bytes]]
     validators: List[Callable[[List[str]], None]]
+
+
+@dataclass
+class WebSocketCommandResultEntity:
+    result: Union[str, int, float]
+    time: float
